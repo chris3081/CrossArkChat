@@ -11,14 +11,14 @@ ENV USER=crossark HOME=/home/crossark
 RUN cd /; wget https://www.dropbox.com/s/4tb1jw712di4mqo/CrossArkChatLinux.zip?dl=1 -O /tmp/CrossArkChatLinux.zip; \
     unzip /tmp/CrossArkChatLinux.zip -d /app ; \
     rm /tmp/CrossArkChatLinux.zip; \
-    chmod 755 /app/CrossArkChatLinux/CrossArkChat; \
+    chmod 755 /app/CrossArkChat; \
     chown crossark:crossark /app
 
 
-WORKDIR /app/CrossArkChatLinux
+WORKDIR /app/
 
 USER crossark
 
-VOLUME [ '/app/CrossArkChatLinux/Config' ]
+VOLUME [ '/app/Config' ]
 
 CMD ["./CrossArkChat"]
